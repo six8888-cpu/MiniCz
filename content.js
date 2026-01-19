@@ -71,7 +71,7 @@ function cleanup() {
   console.log('[MiniCz] 扩展上下文已失效，已清理资源');
 }
 
-// 创建宠物元素
+// 创建CZ元素
 function createPetElement() {
   // 防止重复创建或已清理
   if (isCleanedUp || document.getElementById('divination-pet-container')) {
@@ -84,7 +84,7 @@ function createPetElement() {
     return;
   }
   
-  // 宠物容器
+  // CZ容器
   const container = document.createElement('div');
   container.id = 'divination-pet-container';
   
@@ -104,7 +104,7 @@ function createPetElement() {
     container.style.bottom = '20px';
   }
   
-  // 宠物图片
+  // CZ图片
   const pet = document.createElement('div');
   pet.id = 'divination-pet';
   pet.title = '点击占卜 | 拖拽移动';
@@ -408,14 +408,14 @@ function showResultPopup(result, audioFile) {
   popup.id = 'divination-result';
   popup.className = 'show';
   
-  // 获取宠物位置，让弹窗跟随宠物
+  // 获取CZ位置，让弹窗跟随CZ
   const container = document.getElementById('divination-pet-container');
   if (container) {
     const rect = container.getBoundingClientRect();
     const popupWidth = 280;
     const popupHeight = 280; // 估计高度
     
-    // 计算弹窗位置（在宠物上方）
+    // 计算弹窗位置（在CZ上方）
     let popupX = rect.left + (rect.width / 2) - (popupWidth / 2);
     let popupY = rect.top - popupHeight - 10;
     
@@ -423,7 +423,7 @@ function showResultPopup(result, audioFile) {
     if (popupX < 10) popupX = 10;
     if (popupX + popupWidth > window.innerWidth - 10) popupX = window.innerWidth - popupWidth - 10;
     if (popupY < 10) {
-      // 如果上方空间不够，放到宠物下方
+      // 如果上方空间不够，放到CZ下方
       popupY = rect.bottom + 10;
     }
     
@@ -498,7 +498,7 @@ function playAudio(audioFile) {
   }
 }
 
-// 页面加载完成后创建宠物
+// 页面加载完成后创建CZ
 console.log('[MiniCz] 脚本已加载');
 
 function init() {
@@ -508,11 +508,11 @@ function init() {
     return;
   }
   
-  console.log('[MiniCz] 开始创建宠物...');
+  console.log('[MiniCz] 开始创建CZ...');
   try {
     createPetElement();
     if (!isCleanedUp) {
-      console.log('[MiniCz] 宠物创建成功！');
+      console.log('[MiniCz] CZ创建成功！');
     }
   } catch (e) {
     console.error('[MiniCz] 创建失败:', e);

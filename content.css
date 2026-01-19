@@ -1,4 +1,4 @@
-/* 宠物容器 */
+/* CZ容器 */
 #divination-pet-container {
   position: fixed !important;
   z-index: 2147483647 !important;
@@ -18,7 +18,7 @@
   transform: scale(1.1) !important;
 }
 
-/* 宠物容器 */
+/* CZ容器 */
 #divination-pet {
   width: 100px;
   height: 100px;
@@ -32,7 +32,7 @@
   transform-style: preserve-3d;
 }
 
-/* 宠物图片 */
+/* CZ图片 */
 #divination-pet-img {
   width: 100%;
   height: 100%;

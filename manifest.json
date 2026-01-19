@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "MiniCz",
   "version": "1.0.0",
-  "description": "点击宠物，根据时间起卦占卜吉凶",
+  "description": "点击CZ，根据时间起卦占卜吉凶",
   "permissions": ["storage"],
   "icons": {
     "16": "icons/icon16.png",
