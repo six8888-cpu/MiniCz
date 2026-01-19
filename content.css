@@ -1,0 +1,165 @@
+/* 宠物容器 */
+#divination-pet-container {
+  position: fixed !important;
+  z-index: 2147483647 !important;
+  cursor: grab !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  user-select: none !important;
+}
+
+#divination-pet-container:hover {
+  transform: scale(1.05);
+}
+
+#divination-pet-container.dragging {
+  cursor: grabbing !important;
+  transform: scale(1.1) !important;
+}
+
+/* 宠物容器 */
+#divination-pet {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.4));
+  animation: float 3s ease-in-out infinite;
+  user-select: none;
+  transition: transform 0.1s ease-out, filter 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+/* 宠物图片 */
+#divination-pet-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+#divination-pet:hover {
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.5));
+}
+
+#divination-pet:active {
+  animation: bounce 0.3s ease;
+}
+
+@keyframes float {
+  0%, 100% { transform: perspective(500px) translateY(0) rotateX(0deg) rotateY(0deg); }
+  50% { transform: perspective(500px) translateY(-10px) rotateX(0deg) rotateY(0deg); }
+}
+
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.85); }
+  100% { transform: scale(1); }
+}
+
+/* 占卜结果弹窗 - 位置由JS动态设置 */
+#divination-result {
+  position: fixed;
+  width: 280px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  z-index: 2147483646;
+  display: none;
+  animation: slideUp 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+}
+
+#divination-result.show {
+  display: block;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 关闭按钮 */
+#divination-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#divination-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* 卦象符号 */
+.hexagram-symbol {
+  font-size: 64px;
+  text-align: center;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+  margin-bottom: 10px;
+}
+
+/* 卦名 */
+.hexagram-name {
+  font-size: 28px;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+/* 吉凶等级 */
+.hexagram-level {
+  font-size: 20px;
+  text-align: center;
+  padding: 5px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 auto 15px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.level-container {
+  text-align: center;
+}
+
+/* 卦辞描述 */
+.hexagram-desc {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* 起卦时间 */
+.hexagram-time {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
